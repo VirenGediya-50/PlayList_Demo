@@ -24,7 +24,7 @@ code {
 }
 
 .playlist_frame{
-  padding: 0 40px 0 170px !important;
+  padding: 0 40px 0 160px !important;
 }
 
 .album_frame{
@@ -50,10 +50,18 @@ code {
   color: gray;
   justify-content: center;
 }
+.singer_frame{
+  height:250px;
+  width: 250px;
+  overflow: hidden;
+}
 
 .singer_image{
-  height:250px;
-  width: inherit;
+    height: 100%;
+    width: auto;
+    display: inline;
+    margin: 0 auto;
+    margin-left: -38%;
 }
 
 .list_class{

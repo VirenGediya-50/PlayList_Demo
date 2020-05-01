@@ -22,9 +22,12 @@ export class AllAlubums extends Component {
                         <Col xs={4} md={4} key={key} >
                             <h3>{singerName}</h3>
                             <h6><i>{subTitle}</i></h6>
-                            <Image src={singerImage} className={'singer_image'}/>
+                            <div className={'singer_frame'}>
+                                <Image src={singerImage} className={'singer_image'}/>
+                            </div>
                             <SongList 
                                 songData={songList}
+                                draggable={false}
                                 rightIcon={require('../../Assets/Images/addIcon.png')}
                                 rightIconOnClick = {(index) => this.handleAddSong(index, key)}
                                 listClassName = {'list_class'}

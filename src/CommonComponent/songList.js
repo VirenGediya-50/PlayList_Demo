@@ -1,15 +1,19 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { convertNumberToTime } from '../Methods';
- 
+
 const SongList = (props) => {
-    const { songData, mainClass, rightIcon, leftIcon, rightIconOnClick, leftIconOnClick, rightIconClassName, leftIconClassName, listClassName  } = props;
-    
+    const { songData, title, mainClass, draggable, rightIcon, handleDragEnd, handleDragStart, leftIcon, rightIconOnClick, leftIconOnClick, rightIconClassName, leftIconClassName, listClassName  } = props;
+
     return (
-        <ListGroup variant="flush" className={mainClass}>
+        <ListGroup variant="flush" id={title} className={mainClass} >
             {songData.length > 0 ?
                 songData.map((song, index) => (
-                    <ListGroup.Item key={index} className={listClassName}>
+                    <ListGroup.Item id={index} className={listClassName} draggable={draggable}
+                        onDragStart={(event) => handleDragStart(event)}
+                        onDrop={(event) => handleDragEnd(event)} 
+                        onDragOver={(e) => e.preventDefault()}
+                    >
                         {
                             rightIcon && (
                                 <img
