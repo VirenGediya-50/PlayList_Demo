@@ -19,7 +19,7 @@ const playListReducer = (state = InitialState, action) => {
                     newSongsArray.push(action.payload)
                     return {...state, sideBSongs : { totalTime: totalBSongsTime ,songLimit: 1320, songs: [...newSongsArray]}};
                 }else{
-                    alert("Sde B is full")
+                    alert("Side B is full.")
                     return state;
                 }
             }else{

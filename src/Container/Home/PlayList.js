@@ -18,7 +18,7 @@ class PlayList extends Component {
 
         if( parentID ===  event.target.parentElement.id){
             let newArray= this.props.songData;
-            
+
             if(startIndex > lastIndex){
                 const newObj = newArray[startIndex];
                 newArray.splice((startIndex), 1);
@@ -31,7 +31,7 @@ class PlayList extends Component {
 
             this.props.updateSongList(newArray, parentID);
         }else{
-            alert("Side is not Match");
+            alert("Same side swipe allow.");
         }
     }
     
