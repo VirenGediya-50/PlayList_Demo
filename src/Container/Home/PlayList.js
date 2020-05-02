@@ -15,9 +15,10 @@ class PlayList extends Component {
         const startIndex = event.dataTransfer.getData("startID");
         const parentID = event.dataTransfer.getData("parentId");
         const lastIndex = event.target.id;
+
         if( parentID ===  event.target.parentElement.id){
-            
             let newArray= this.props.songData;
+            
             if(startIndex > lastIndex){
                 const newObj = newArray[startIndex];
                 newArray.splice((startIndex), 1);
@@ -25,8 +26,9 @@ class PlayList extends Component {
             }else{
                 const newObj = newArray[startIndex];
                 newArray.splice((startIndex), 1);
-                newArray.splice((lastIndex-1), 0, newObj);
+                newArray.splice(lastIndex, 0, newObj);
             }
+
             this.props.updateSongList(newArray, parentID);
         }else{
             alert("Side is not Match");
