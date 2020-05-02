@@ -18,17 +18,9 @@ class PlayList extends Component {
 
         if( parentID ===  event.target.parentElement.id){
             let newArray= this.props.songData;
-
-            if(startIndex > lastIndex){
-                const newObj = newArray[startIndex];
-                newArray.splice((startIndex), 1);
-                newArray.splice(lastIndex, 0, newObj);
-            }else{
-                const newObj = newArray[startIndex];
-                newArray.splice((startIndex), 1);
-                newArray.splice(lastIndex, 0, newObj);
-            }
-
+            const newObj = newArray[startIndex];
+            newArray.splice(startIndex, 1);
+            newArray.splice(lastIndex, 0, newObj);
             this.props.updateSongList(newArray, parentID);
         }else{
             alert("Same side swipe allow.");
